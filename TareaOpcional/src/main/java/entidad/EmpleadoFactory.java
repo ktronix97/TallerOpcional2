@@ -6,18 +6,18 @@
 package Entidad;
 
 import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.MappedSuperclass;
 
 /**
- * clase empleados
+ * clase EmpleadoFactory
  *
  * @author Dalia Romero
  * @version 1.0
  */
-@Entity
+@MappedSuperclass
 @Inheritance(strategy
         = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name
@@ -40,23 +40,24 @@ public abstract class EmpleadoFactory {
         this.identificador = identificador;
         this.nombre = nombre;
     }
+    
 
     /**
-     * @return the identificador
+     * @return el identificador del empleado
      */
     public int getIdentificador() {
         return identificador;
     }
 
     /**
-     * @param identificador the identificador to set
+     * @param identificador 
      */
     public void setIdentificador(int identificador) {
         this.identificador = identificador;
     }
 
     /**
-     * @return the nombre
+     * @return nombre del empleado
      */
     public String getNombre() {
         return nombre;

@@ -14,7 +14,6 @@ import java.util.List;
 
 /**
  * clase persistencia para la tabla empleados.
- *
  * @author Dalia Romero
  * @version 1.0
  */
@@ -24,7 +23,7 @@ public class PersistenciaEmpleado {
     }
 
     /**
-     * guarda el empleado en la tabla empleados de la base de datos.
+     * agrega el empleado a la tabla empleados de la base de datos.
      *
      * @param empleado
      */
@@ -38,7 +37,7 @@ public class PersistenciaEmpleado {
     }
 
     /**
-     * Buscar una mascota en la base de datos
+     * Buscar un empleado por identificador  en la base de datos
      *
      * @param identificador el número que identifica al empleado
      * @return el objeto Empleado o null si no se encuentra
@@ -60,7 +59,7 @@ public class PersistenciaEmpleado {
     public List<EmpleadoFactory> consultarEmpleados() {
         EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("jpaEmpleados");
         EntityManager gestor = fabrica.createEntityManager();
-        Query consulta = gestor.createQuery("select m from Empleados m");
+        Query consulta = gestor.createQuery("select m from EMPLEADOFACTORY m ");
         List<EmpleadoFactory> listaEmpleados = consulta.getResultList();
         gestor.close();
         return listaEmpleados;

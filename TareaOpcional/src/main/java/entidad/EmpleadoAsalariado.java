@@ -14,7 +14,7 @@ import jakarta.persistence.Entity;
  * @version 1.0
  */
 @Entity
-@DiscriminatorValue("empAsalariado")
+@DiscriminatorValue("empleadoAsalariado")
 
 public class EmpleadoAsalariado extends EmpleadoFactory {
 
@@ -24,7 +24,7 @@ public class EmpleadoAsalariado extends EmpleadoFactory {
     }
 
     /**
-     * inicializa la variable de tipo EmpAsalariado
+     * inicializa la variable de tipo EmpleadoAsalariado
      *
      * @param salario_semanal
      * @param identificador

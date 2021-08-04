@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence  http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="jpaEmpleados" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Entidad.EmpleadoAsalariado</class>
+    <class>Entidad.EmpleadoHora</class>
+    <class>Entidad.EmpleadoFactory</class>
+    <properties>
+      <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:C:\bases\empleados.db"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.target-database" value="database"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:C:\Users\bases\empleados.db"/>
+      <property name="javax.persistence.jdbc.user" value=""/>
+      <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>

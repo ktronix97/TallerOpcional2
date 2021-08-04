@@ -12,16 +12,22 @@
     </properties>
     
     <dependencies>
-    <dependency>
-    <groupId>org.eclipse.persistence</groupId>
-    <artifactId>eclipselink</artifactId>
-    <version>3.0.0</version>
-    </dependency>
-    <dependency>
-    <groupId>org.eclipse.persistence</groupId>
-    <artifactId>org.eclipse.persistence.jpa</artifactId>
-    <version>3.0.0</version>
-    </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>1</groupId>
+            <artifactId>sqlite</artifactId>
+            <version>3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.0.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
 </project>

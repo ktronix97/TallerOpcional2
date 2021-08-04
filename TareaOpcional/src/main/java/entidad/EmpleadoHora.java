@@ -7,6 +7,7 @@ package Entidad;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import javax.lang.model.SourceVersion;
 
 /**
  *
@@ -14,12 +15,12 @@ import jakarta.persistence.Entity;
  * @version 1.0
  */
 @Entity
-@DiscriminatorValue("empHoras")
+@DiscriminatorValue("empleadoHora")
 
 public class EmpleadoHora extends EmpleadoFactory {
 
-    private double valor_horas;
-    private float horas_trabajadas;
+    private double valorHora;
+    private int horasTrabajadas;
 
     public EmpleadoHora() {
     }
@@ -28,59 +29,64 @@ public class EmpleadoHora extends EmpleadoFactory {
      *
      * @param identificador
      * @param nombre
-     * @param valor_horas
+     * @param valorHora
      * @param horas_trabajadas
      */
-    public EmpleadoHora(int identificador, String nombre, double valor_horas, float horas_trabajadas) {
+    public EmpleadoHora(int identificador, String nombre, double valorHora, int horas_trabajadas) {
         super(identificador, nombre);
-        this.valor_horas = valor_horas;
-        this.horas_trabajadas = horas_trabajadas;
+        this.valorHora = valorHora;
+        this.horasTrabajadas = horas_trabajadas;
     }
 
     /**
-     * @return the valor_horas
+     * @return el valor de las horas
      */
     public double getValor_horas() {
-        return valor_horas;
+        return valorHora;
     }
 
     /**
-     * @param valor_horas the valor_horas to set
+     * @param valorHora
      */
-    public void setValor_horas(double valor_horas) {
-        this.valor_horas = valor_horas;
+    public void setValor_horas(double valorHora) {
+        this.valorHora = valorHora;
     }
 
     /**
-     * @return the horas_trabajadas
+     * @return horas trabajadas
      */
     public float getHoras_trabajadas() {
-        return horas_trabajadas;
+        return horasTrabajadas;
     }
 
     /**
-     * @param horas_trabajadas the horas_trabajadas to set
+     * @param horasTrabajadas  horas trabajadas to set
      */
-    public void setHoras_trabajadas(float horas_trabajadas) {
-        this.horas_trabajadas = horas_trabajadas;
+    public void setHoras_trabajadas(int horasTrabajadas) {
+        this.horasTrabajadas = horasTrabajadas;
     }
 
     /**
-     * calcular el salario de cada empleadode tipo empleado por horas.
+     * calcula el salario de cada empleadode tipo empleado por horas.
      *
      * @return
      */
     @Override
     public double calcularSalario() {
-        double salario = this.valor_horas * this.horas_trabajadas;
+        double salario = this.valorHora * this.horasTrabajadas;
 
-        if (this.horas_trabajadas > 40) {
+        if (this.horasTrabajadas > 40) {
             salario = salario + 200000;
         }
 
         return salario;
     }
 
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.RELEASE_16;
+    }
+
+ 
 
 
 }
